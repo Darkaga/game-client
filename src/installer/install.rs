@@ -4,9 +4,10 @@ use std::path::{Path, PathBuf};
 use std::process::Command;
 use std::sync::Arc;
 use tokio::sync::mpsc;
+use tokio::task;
 
 use crate::config::Config;
-use crate::repository::{GameInfo, GameVersion, FileType};
+use crate::repository::{GameInfo, GameVersion, FileType, GameFile}; // Added GameFile import
 use super::download::{Downloader, DownloadStatus};
 use super::version::VersionManager;
 
@@ -23,7 +24,7 @@ pub enum InstallStatus {
     Failed { error: String },
 }
 
-/// Game installer
+/// Game installer (Windows-only implementation)
 pub struct Installer {
     /// Configuration
     config: Config,
@@ -65,7 +66,7 @@ impl Installer {
         self.send_status(InstallStatus::Downloading(status)).await;
     }
     
-    /// Install a game version - simplified simulation
+    /// Install a game version (Windows-only implementation)
     pub async fn install_version(&self, game: &GameInfo, version: &GameVersion) -> Result<()> {
         info!("Installing {} version {}", game.title, version.name);
         
@@ -75,53 +76,75 @@ impl Installer {
             version: version.name.clone(),
         }).await;
         
-        // Simulate installation (wait a bit)
-        tokio::time::sleep(tokio::time::Duration::from_secs(2)).await;
-        
-        // Get installation directory
+        // Determine the installation directory (this is the game install directory)
         let install_dir = self.config.paths.install_dir.join(&game.id);
-        
-        // Create installation directory if it doesn't exist
         if !install_dir.exists() {
             std::fs::create_dir_all(&install_dir)
                 .context("Failed to create installation directory")?;
         }
         
-        // Write a dummy file to simulate installation
+        // Download required files (installers and patches)
+        let required_files: Vec<GameFile> = self.version_manager.get_required_files(version)
+            .into_iter().cloned().collect();
+        let downloaded_paths = self.downloader.download_files(&required_files).await?;
+        
+        // For each installer file, if its type is Installer, execute it.
+        for file in &version.files {
+            if file.file_type == FileType::Installer {
+                // Find the local path corresponding to the installer file
+                let file_path = downloaded_paths.iter()
+                    .find(|p| p.ends_with(&file.name))
+                    .ok_or_else(|| anyhow::anyhow!("Installer file '{}' not found", file.name))?
+                    .clone();
+                
+                // Run the installer executable (Windows-only)
+                let install_result = task::spawn_blocking({
+                    let file_path = file_path.clone();
+                    move || {
+                        Command::new(&file_path)
+                            .spawn()
+                            .and_then(|mut child| child.wait())
+                    }
+                }).await??;
+                
+                if !install_result.success() {
+                    self.send_status(InstallStatus::Failed { 
+                        error: format!("Installer exited with status: {:?}", install_result) 
+                    }).await;
+                    return Err(anyhow::anyhow!("Installation failed with status: {:?}", install_result));
+                }
+            }
+        }
+        
+        // Mark installation complete by writing a marker file in the game install directory
         let install_marker = install_dir.join("installed.txt");
         std::fs::write(&install_marker, format!("Game: {}\nVersion: {}\nInstalled: {}", 
             game.title, version.name, chrono::Local::now()))
             .context("Failed to write installation marker")?;
         
-        // Send completed status
         self.send_status(InstallStatus::Completed {
             game: game.title.clone(),
-            install_dir,
+            install_dir: install_dir.clone(),
         }).await;
         
         info!("Installation completed for {} version {}", game.title, version.name);
         Ok(())
     }
     
-    /// Uninstall a game - simplified simulation
+    /// Uninstall a game by removing its install directory
     pub fn uninstall_game(&self, game: &GameInfo) -> Result<()> {
         info!("Uninstalling {}", game.title);
-        
         let install_dir = self.config.paths.install_dir.join(&game.id);
-        
         if !install_dir.exists() {
             return Err(anyhow::anyhow!("Game is not installed"));
         }
-        
-        // Remove the directory to simulate uninstallation
         std::fs::remove_dir_all(install_dir)
             .context("Failed to remove installation directory")?;
-            
         info!("Uninstallation completed for {}", game.title);
         Ok(())
     }
     
-    /// Check if a game is installed
+    /// Check if a game is installed (by checking for the marker file)
     pub fn is_installed(&self, game: &GameInfo) -> bool {
         let install_dir = self.config.paths.install_dir.join(&game.id);
         let install_marker = install_dir.join("installed.txt");
@@ -129,7 +152,6 @@ impl Installer {
     }
 }
 
-// For forwarding download status to the UI thread
 impl Clone for Installer {
     fn clone(&self) -> Self {
         Self {
