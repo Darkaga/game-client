@@ -1,0 +1,54 @@
+[package]
+name = "game-library-manager"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "A Game Library and Manager Software for DRM-free games"
+
+[dependencies]
+# GUI Framework - Using egui for cross-platform support
+eframe = "0.22.0"
+egui = "0.22.0"
+egui_extras = { version = "0.22.0", features = ["image"] }
+chrono = "0.4.30"  # Updated to handle from_timestamp properly
+image = "0.24.6" 
+
+# SMB connection
+smb2 = "0.1.0"
+url = "2.3.1"
+
+# Asynchronous operations
+tokio = { version = "1.28.0", features = ["full", "sync"] }
+futures = "0.3.28"
+
+# Serialization/Deserialization
+serde = { version = "1.0.163", features = ["derive"] }
+serde_json = "1.0.96"
+
+# HTTP client for IGDB API
+reqwest = { version = "0.11.17", features = ["json"] }
+
+# File operations
+tempfile = "3.5.0"
+sha2 = "0.10.6"
+walkdir = "2.3.3"
+zip = "0.6.6"
+
+# Regular expressions
+regex = "1.7.0"
+
+# Configuration
+dirs = "5.0.1"
+config = "0.13.3"
+toml = "0.7.3"
+
+# Logging
+log = "0.4.17"
+env_logger = "0.10.0"
+
+# Error handling
+anyhow = "1.0.71"
+thiserror = "1.0.40"
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3.9", features = ["winuser", "shellapi"] }

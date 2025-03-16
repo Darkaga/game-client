@@ -1,0 +1,13 @@
+C:\Users\chris\Documents\coding\game-client\target\debug\deps\libtoml-2a556fdd1f3c5165.rmeta: C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\lib.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\map.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\value.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\datetime.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\ser.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\de.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\tokens.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\macros.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\spanned.rs
+
+C:\Users\chris\Documents\coding\game-client\target\debug\deps\toml-2a556fdd1f3c5165.d: C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\lib.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\map.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\value.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\datetime.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\ser.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\de.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\tokens.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\macros.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\spanned.rs
+
+C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\lib.rs:
+C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\map.rs:
+C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\value.rs:
+C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\datetime.rs:
+C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\ser.rs:
+C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\de.rs:
+C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\tokens.rs:
+C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\macros.rs:
+C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\toml-0.5.11\src\spanned.rs:
