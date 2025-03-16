@@ -1,7 +1,0 @@
-C:\Users\chris\Documents\coding\game-client\target\release\deps\liblinked_hash_map-cd24f99a181c3bc8.rmeta: C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\linked-hash-map-0.5.6\src\lib.rs
-
-C:\Users\chris\Documents\coding\game-client\target\release\deps\liblinked_hash_map-cd24f99a181c3bc8.rlib: C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\linked-hash-map-0.5.6\src\lib.rs
-
-C:\Users\chris\Documents\coding\game-client\target\release\deps\linked_hash_map-cd24f99a181c3bc8.d: C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\linked-hash-map-0.5.6\src\lib.rs
-
-C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\linked-hash-map-0.5.6\src\lib.rs:

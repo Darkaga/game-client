@@ -1,9 +1,0 @@
-C:\Users\chris\Documents\coding\game-client\target\debug\deps\libaccesskit_consumer-8ee63800ab7279ce.rmeta: C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_consumer-0.15.2\src\lib.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_consumer-0.15.2\src\tree.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_consumer-0.15.2\src\node.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_consumer-0.15.2\src\iterators.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_consumer-0.15.2\src\text.rs
-
-C:\Users\chris\Documents\coding\game-client\target\debug\deps\accesskit_consumer-8ee63800ab7279ce.d: C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_consumer-0.15.2\src\lib.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_consumer-0.15.2\src\tree.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_consumer-0.15.2\src\node.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_consumer-0.15.2\src\iterators.rs C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_consumer-0.15.2\src\text.rs
-
-C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_consumer-0.15.2\src\lib.rs:
-C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_consumer-0.15.2\src\tree.rs:
-C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_consumer-0.15.2\src\node.rs:
-C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_consumer-0.15.2\src\iterators.rs:
-C:\Users\chris\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\accesskit_consumer-0.15.2\src\text.rs:
